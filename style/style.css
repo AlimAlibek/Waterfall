@@ -62,7 +62,7 @@
     inset: 0;
     transform: translateZ(150px);
     background-color: rgba(255, 255, 255, 0);
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(40px);
 }
 
 .block {
@@ -75,6 +75,7 @@
     top: 0;
     padding: 20px 30px;
     color: #ffffff;
+    will-change: transform;
 }
 
 .block h2{
