@@ -1,4 +1,11 @@
 
+window.addEventListener("load", () => {
+   const loader = document.getElementsByClassName('loader');
+   if (loader[0]) {
+    loader[0].style.display = 'none'
+   }
+})
+
 let ready = false;
 let go = false;
 
@@ -23,20 +30,17 @@ document.addEventListener('mousemove', (e) => {
 })
 
 document.body.style.cssText = `
---right-block-x-position-px: 0px;
---right-block-y-position-px: 0px;
---right-block-z-position-px: -110px;
---right-block-scale: 0.5;
-
---top-block-y-position-px: 0px;
---top-block-x-position-px: 0px;
---top-block-z-position-px: -110px;
---top-block-scale: 0.5;
-
-
---right-block-transition: none;
---top-block-transition: none;
-
+    --right-block-x-position-px: 0px;
+    --right-block-y-position-px: 0px;
+    --right-block-z-position-px: -110px;
+    --right-block-scale: 0.5;
+    --top-block-y-position-px: 0px;
+    --top-block-x-position-px: 0px;
+    --top-block-z-position-px: -110px;
+    --top-block-scale: 0.5;
+    --right-block-transition: none;
+    --top-block-transition: none;
+    --right-block-display: none;
 `
 
 const blockTransition = 'transform 1.7s cubic-bezier(0.23,1,0.32,1)'

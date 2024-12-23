@@ -1,5 +1,4 @@
 
-
 * {
     margin: 0;
     padding: 0;
@@ -42,7 +41,6 @@
     will-change: transform;
 }
 
-
 .layer_1 {
     transform: rotate(0) translateZ(-100px) scale(1.2);
 }
@@ -59,7 +57,13 @@
     transform: translateZ(120px) translateX(calc(var(--translate-x) * -0.07)) translateY(calc(var(--translate-y) * -0.03));
 }
 
-
+.loader {
+    position: absolute;
+    inset: 0;
+    transform: translateZ(150px);
+    background-color: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(30px);
+}
 
 .block {
     width: calc(var(--index) * 20);
@@ -75,7 +79,7 @@
 
 .block h2{
     font-family: Oswald-wf;
-    font-size: 60px;
+    font-size: calc(var(--index) * 1.7);
 }
 
 .block-top {
