@@ -1,0 +1,105 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --index: calc(1vw + 1vh);
+    --layer-transition: transform 1.7s cubic-bezier(.05,.27,.09,.98);
+    --block-transition: transform 1.7s cubic-bezier(0.23,1,0.32,1);
+}
+
+@font-face {
+    font-family: Oswald-wf;
+    src: url(../font/Oswald-Medium.ttf);
+    font-weight: bold;
+}
+
+.layers {
+    perspective: 1000px;
+    overflow: hidden;
+}
+
+.layers_container {
+    min-height: 500px;
+    height: 100vh;
+    transform-style: preserve-3d;
+    transform: rotateX(var(--rotate-y)) rotateY(var(--rotate-x));
+    transition: var(--layer-transition);
+    will-change: transform;
+}
+
+.layers_item {
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    inset: -0.5vw;
+    transition: var(--layer-transition);
+    pointer-events: none;
+    will-change: transform;
+}
+
+
+.layer_1 {
+    transform: rotate(0) translateZ(-100px) scale(1.2);
+}
+.layer_2 {
+    transform: translateZ(10px) translateX(calc(var(--translate-x) * -0.008)) translateY(calc(var(--translate-y) * -0.004));
+}
+.layer_3{
+    transform: translateZ(40px) translateX(calc(var(--translate-x) * -0.014)) translateY(calc(var(--translate-y) * -0.007));
+}
+.layer_4 {
+    transform: translateZ(80px) translateX(calc(var(--translate-x) * -0.02)) translateY(calc(var(--translate-y) * -0.01));
+}
+.layer_5 {
+    transform: translateZ(120px) translateX(calc(var(--translate-x) * -0.07)) translateY(calc(var(--translate-y) * -0.03));
+}
+
+
+
+.block {
+    width: calc(var(--index) * 20);
+    height: calc(var(--index) * 10);
+    border-radius: 20px;
+    backdrop-filter: blur(30px);
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 20px 30px;
+    color: #ffffff;
+}
+
+.block h2{
+    font-family: Oswald-wf;
+    font-size: 60px;
+}
+
+.block-top {
+    transform:
+        translateX(var(--top-block-x-position-px))
+        translateZ(var(--top-block-z-position-px))
+        translateY(var(--top-block-y-position-px))
+        scale(var(--top-block-scale))
+    ;
+
+    transition: var(--top-block-transition);
+    background-color: rgba(255, 238, 161, 0.40);
+}
+
+.block-right {
+    transform:
+        translateX(var(--right-block-x-position-px))
+        translateZ(var(--right-block-z-position-px))
+        translateY(var(--right-block-y-position-px))
+        scale(var(--right-block-scale))
+    ;
+    transition: var(--right-block-transition);
+    display: var(--right-block-display);
+    background-color: rgba(202, 202, 202, 0.40);
+}
+
+
