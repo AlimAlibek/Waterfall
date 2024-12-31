@@ -9,12 +9,18 @@
     --index: calc(1vw + 1vh);
     --layer-transition: transform 1.7s cubic-bezier(.05,.27,.09,.98);
     --block-transition: transform 1.7s cubic-bezier(0.23,1,0.32,1);
+    font-family: Oswald-wf;
 }
 
 @font-face {
     font-family: Oswald-wf;
     src: url(../font/Oswald-Medium.ttf);
     font-weight: bold;
+}
+@font-face {
+    font-family: Oswald-wf;
+    src: url(../font/Oswald-Regular.ttf);
+    font-weight: normal;
 }
 
 .layers {
@@ -68,6 +74,7 @@
 .block {
     width: calc(var(--index) * 20);
     height: calc(var(--index) * 10);
+    overflow: hidden;
     border-radius: 20px;
     backdrop-filter: blur(30px);
     position: absolute;
@@ -79,7 +86,6 @@
 }
 
 .block h2{
-    font-family: Oswald-wf;
     font-size: calc(var(--index) * 1.7);
 }
 

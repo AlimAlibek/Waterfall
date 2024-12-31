@@ -56,6 +56,12 @@ const maxTopBlockXPositionPercent = 40;
 
 let scrollPositionPx = 0
 
+let prevTopBlockSection = 0;
+let prevRightBlockSection = 0;
+
+const rightBlock = document.getElementById("block-right")
+const topBlock = document.getElementById("block-top")
+
 document.addEventListener('wheel', e => {
 
     if (!go) {
@@ -71,6 +77,18 @@ document.addEventListener('wheel', e => {
     const scrollPositionPercent = scrollPositionPx/window.innerHeight*100;
 
     const currentScrollSection = Math.floor(scrollPositionPercent/100);
+
+    const currentRightBlockSection = Math.floor((currentScrollSection-1)/2);
+    const currentTopBlockSection = Math.floor(currentScrollSection/2);
+
+    if (currentTopBlockSection !== prevTopBlockSection) {
+        topBlock.innerHTML = TopBLockContents[currentTopBlockSection] || '';
+        prevTopBlockSection = currentTopBlockSection;
+    }
+    if (currentRightBlockSection !== prevRightBlockSection) {
+        rightBlock.innerHTML = rightBLockContents[currentRightBlockSection] || '';
+        prevRightBlockSection = currentRightBlockSection;
+    }
 
     const scrollPosition1SectionPercent = scrollPositionPercent - (100*(currentScrollSection - (currentScrollSection % 2)));
 
